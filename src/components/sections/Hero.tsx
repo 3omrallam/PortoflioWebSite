@@ -67,10 +67,11 @@ export function Hero() {
             <Image
               src="/profile.jpg"
               alt="Profile"
-              fill
+              // fill
               /* Adjust the object position to center your face. Example: 50% 30% moves focus slightly upward. */
               className="object-cover object-[60%_0%]"
-              sizes="(max-width: 768px) 208px, 256px"
+              height={256}
+              width={256}
               priority
             />
           </div>
