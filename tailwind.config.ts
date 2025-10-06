@@ -24,16 +24,7 @@ const config: Config = {
       full: '9999px' // keep full for perfectly circular shapes like avatars
     },
     extend: {
-      fontFamily: {
-        // Formal serif (new)
-        formal: ['var(--font-formal)', 'Cormorant Garamond', 'serif'],
-        // Primary UI sans
-        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
-        // Display alias (can map to serif for more elegant headings if desired)
-        display: ['var(--font-formal)', 'Cormorant Garamond', 'serif'],
-        // Monospace
-        mono: ['var(--font-mono)', 'JetBrains Mono', 'ui-monospace', 'monospace']
-      },
+
       colors: {
         bg: 'hsl(var(--bg))',
         'bg-alt': 'hsl(var(--bg-alt))',

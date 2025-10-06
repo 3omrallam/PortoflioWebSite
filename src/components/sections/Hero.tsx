@@ -23,8 +23,15 @@ export function Hero() {
             transition={{ duration: 0.65, delay: 0.05 }}
             className="text-lg text-fg-muted max-w-xl leading-relaxed"
           >
-            Senior Front-End Engineer specializing in design systems, performance, and
-            delightful user experiences with React, Next.js, Angular & modern web tooling.
+            👋 Hi, I’m Omar — Senior Front-End Engineer & UI Architect I’m a Senior
+            Front-End Developer and Architect passionate about building modern,
+            high-performance, and scalable web applications. I specialize in crafting
+            pixel-perfect UIs with a focus on performance, accessibility, and clean
+            architecture. Over the past 7+ years, I’ve helped companies design and develop
+            digital products that are fast, responsive, and delightful to use. I believe
+            that great front-end engineering is where creativity meets technology — and I
+            love turning complex ideas into elegant, maintainable solutions. 🚀 Let’s
+            build something exceptional together.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
