@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "design-system-platform",
+    "title": "Enterprise Design System Platform",
+    "description": "A composable multi-brand design system with theme tokens, accessibility primitives, and automated visual regression.",
+    "tech": ["React", "Next.js", "Storybook", "TailwindCSS"],
+    "repo": "https://github.com/your-handle/design-system",
+    "live": "https://design-system-demo.vercel.app",
+    "image": "/projects/design-system.png",
+    "featured": true,
+    "tags": ["design-system", "theming", "a11y"]
+  },
+  {
+    "slug": "analytics-dashboard",
+    "title": "Real-time Analytics Dashboard",
+    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
+    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "repo": "https://github.com/your-handle/analytics-dashboard",
+    "live": "https://analytics-demo.vercel.app",
+    "image": "/projects/analytics.png",
+    "featured": true,
+    "tags": ["data-viz", "realtime"]
+  }
+]

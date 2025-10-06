@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "rules": {
+    "react/jsx-curly-brace-presence": ["warn", {"props": "never", "children": "never"}],
+    "no-console": ["warn", {"allow": ["warn", "error"]}],
+    "@next/next/no-img-element": "off"
+  }
+}

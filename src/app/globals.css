@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* (Duplicated from src/styles/globals.css for App Router resolution) */
+:root {
+  --bg: 0 0% 100%;
+  --fg: 222 47% 11%;
+  /* Primary updated from previous (221 83% 53%) to #5A189A (HSL ~ 272 72% 36%) */
+  --primary: 272 72% 36%;
+  /* Foreground (text/icon) color to ensure contrast on primary backgrounds */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 262 83% 58%;
+  --muted: 220 15% 65%;
+  --border: 220 13% 91%;
+}
+.dark {
+  --bg: 222 47% 11%;
+  --fg: 0 0% 100%;
+  /* Slightly lighter variant for dark mode for contrast */
+  --primary: 272 72% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 262 83% 68%;
+  --muted: 215 15% 35%;
+  --border: 215 14% 28%;
+}
+html { scroll-behavior: smooth; }
+body { @apply bg-bg text-fg antialiased font-sans selection:bg-primary/20 selection:text-primary; }
+.container-base { @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8; }
+.fade-in { animation: fadeIn 0.6s ease forwards; }
+.slide-up { animation: slideUp 0.7s ease forwards; }
+* { scrollbar-width: thin; }
+*::-webkit-scrollbar { width: 10px; }
+*::-webkit-scrollbar-track { background: hsl(var(--bg)); }
+*::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
