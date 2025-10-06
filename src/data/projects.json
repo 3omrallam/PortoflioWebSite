@@ -1,24 +1,79 @@
 [
   {
     "slug": "design-system-platform",
-    "title": "Enterprise Design System Platform",
+    "title": "Englease* - E-Learning Platform",
     "description": "A composable multi-brand design system with theme tokens, accessibility primitives, and automated visual regression.",
     "tech": ["React", "Next.js", "Storybook", "TailwindCSS"],
-    "repo": "https://github.com/your-handle/design-system",
-    "live": "https://design-system-demo.vercel.app",
-    "image": "/projects/design-system.png",
+    "repo": "",
+    "live": "https://englease.com/en/",
+    "screenshots": [
+      "/EngleaseDesigns/Classeslist.png",
+      "/EngleaseDesigns/Register.png",
+      "/EngleaseDesigns/Calendar.png"
+    ],
     "featured": true,
     "tags": ["design-system", "theming", "a11y"]
   },
   {
     "slug": "analytics-dashboard",
-    "title": "Real-time Analytics Dashboard",
+    "title": "Saudi Authority for Intellectual Property - Data Visualization",
     "description": "Interactive dashboard with live streaming metrics and custom chart components.",
     "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
-    "repo": "https://github.com/your-handle/analytics-dashboard",
-    "live": "https://analytics-demo.vercel.app",
-    "image": "/projects/analytics.png",
+    "repo": "",
+    "live": "https://saip.gov.sa/",
+    "screenshots": [
+      "/SaipWebsiteDesigns/Dictionary.png",
+      "/SaipWebsiteDesigns/Home.png",
+      "/SaipWebsiteDesigns/About.png"
+    ],
+    "featured": true,
+    "tags": ["data-viz", "realtime"]
+  },
+  {
+    "slug": "IPR Saudi Authority for Intellectual Property - Interactive Dashboard",
+    "title": "IPR Saudi Authority for Intellectual Property - Interactive Dashboard",
+    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
+    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "repo": "",
+    "live": "",
+    "screenshots": [
+      "/IPRDesigns/Register.png",
+      "/IPRDesigns/Home.png",
+      "/IPRDesigns/EnterData.png"
+    ],
+    "featured": true,
+    "tags": ["data-viz", "realtime"]
+  },
+  {
+    "slug": "analytics-dashboard",
+    "title": "Deal360 - Real Estate Dashboard",
+    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
+    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "repo": "",
+    "live": "",
+    "screenshots": [
+      "/Deal360Designs/HomePageDeal360.png",
+      "/Deal360Designs/MapDesign.png",
+      "/Deal360Designs/Deal360Login.png",
+      "/Deal360Designs/PropertiesDetails.png"
+    ],
+    "featured": true,
+    "tags": ["data-viz", "realtime"]
+  },
+  {
+    "slug": "analytics-dashboard",
+    "title": "Auction Project - NFT Marketplace",
+    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
+    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "repo": "",
+    "live": "",
+    "screenshots": [
+      "/AuctionProject/Favourites.png",
+      "/AuctionProject/Wallet1.png",
+      "/AuctionProject/Profiledropdown.png"
+    ],
     "featured": true,
     "tags": ["data-viz", "realtime"]
   }
+  
 ]

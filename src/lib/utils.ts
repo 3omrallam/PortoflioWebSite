@@ -32,6 +32,7 @@ export type Project = {
   repo?: string;
   live?: string;
   image?: string;
+  screenshots?: string[]; // additional preview images
   featured?: boolean;
   tags?: string[];
 };
