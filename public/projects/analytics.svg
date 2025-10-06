@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450' fill='none'>
+<rect width='800' height='450' rx='40' fill='hsl(272 72% 36% / 0.08)' stroke='hsl(272 72% 36% / 0.5)' stroke-dasharray='6 14' stroke-width='4'/>
+<polyline points='100,320 220,260 300,300 420,210 520,240 640,140 720,180' stroke='hsl(262 83% 58% / 0.9)' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/>
+<circle cx='100' cy='320' r='10' fill='hsl(262 83% 58%)'/>
+<circle cx='220' cy='260' r='10' fill='hsl(262 83% 58%)'/>
+<circle cx='300' cy='300' r='10' fill='hsl(262 83% 58%)'/>
+<circle cx='420' cy='210' r='10' fill='hsl(262 83% 58%)'/>
+<circle cx='520' cy='240' r='10' fill='hsl(262 83% 58%)'/>
+<circle cx='640' cy='140' r='10' fill='hsl(262 83% 58%)'/>
+<circle cx='720' cy='180' r='10' fill='hsl(262 83% 58%)'/>
+<text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='48' fill='hsl(272 72% 36% / 0.75)'>Analytics</text>
+</svg>
