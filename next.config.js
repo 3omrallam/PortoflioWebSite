@@ -6,7 +6,7 @@ const nextConfig = {
   outputFileTracingRoot: path.join(__dirname),
   // Skip TypeScript and ESLint blocking during builds (user requested)
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: false
   },
   eslint: {
     ignoreDuringBuilds: true
