@@ -34,3 +34,9 @@ body { @apply bg-bg text-fg antialiased font-sans selection:bg-primary/20 select
 *::-webkit-scrollbar-track { background: hsl(var(--bg)); }
 *::-webkit-scrollbar-thumb { background: hsl(var(--muted)); border-radius: 8px; }
 *::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
+/* Additional animations for the fancy Button component */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useState } from 'react';
+import Button from '@/components/ui/Button';
 
 const schema = yup.object({
   name: yup.string().required().min(2),
@@ -65,13 +66,9 @@ export default function ContactForm() {
         )}
       </div>
       <div className="flex items-center gap-4">
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="px-6 py-3 rounded-md bg-primary text-white font-medium disabled:opacity-50"
-        >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
-        </button>
+        <Button type="submit" loading={isSubmitting} disabled={isSubmitting}>
+          {isSubmitting ? 'Sending…' : 'Send Message'}
+        </Button>
         {status === 'success' && (
           <p className="text-sm text-green-600">Message sent successfully!</p>
         )}

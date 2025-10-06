@@ -1,8 +1,8 @@
 "use client";
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { siteConfig } from '@/lib/utils';
+import Button from '@/components/ui/Button';
 
 export function Hero() {
   return (
@@ -39,22 +39,10 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex flex-wrap gap-4"
           >
-            <Link
-              href="/contact"
-              className="group relative px-6 py-3 rounded-md bg-primary text-primary-fg font-medium shadow-md hover:shadow-lg transition-colors
-              hover:bg-primary/90 dark:hover:bg-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60
-              focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
-            >
-              <span className="relative z-10">Hire Me</span>
-              <span className="pointer-events-none absolute inset-0 rounded-md bg-gradient-to-r from-secondary/0 via-secondary/30 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Link>
-            <a
-              href="/cv.pdf"
-              className="px-6 py-3 rounded-md border border-border font-medium hover:bg-bg-alt/60 hover:border-primary/50 hover:text-primary transition-colors focus-ring"
-              download
-            >
+            <Button href="/contact" size="lg">Hire Me</Button>
+            <Button href="/cv.pdf" variant="outline" download>
               Download CV
-            </a>
+            </Button>
           </motion.div>
         </div>
         <motion.div
