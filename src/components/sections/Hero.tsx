@@ -65,7 +65,7 @@ export function Hero() {
         >
           <div className="relative h-52 w-52 sm:h-64 sm:w-64 rounded-full overflow-hidden border-4 border-border shadow-[0_0_0_1px_hsl(var(--border)),0_0_40px_-10px_hsl(var(--primary)/0.55)]">
             <Image
-              src="/profile.jpg"
+              src="/OmarImage.jpg"
               alt="Profile"
               // fill
               /* Adjust the object position to center your face. Example: 50% 30% moves focus slightly upward. */
