@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
@@ -26,9 +25,14 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'monospace']
+        // Formal serif (new)
+        formal: ['var(--font-formal)', 'Cormorant Garamond', 'serif'],
+        // Primary UI sans
+        sans: ['var(--font-sans)', 'Inter', 'system-ui', 'sans-serif'],
+        // Display alias (can map to serif for more elegant headings if desired)
+        display: ['var(--font-formal)', 'Cormorant Garamond', 'serif'],
+        // Monospace
+        mono: ['var(--font-mono)', 'JetBrains Mono', 'ui-monospace', 'monospace']
       },
       colors: {
         bg: 'hsl(var(--bg))',
