@@ -5,11 +5,14 @@
   "description": "Modern responsive personal portfolio for a Senior Front-End Engineer (React / Next.js / Angular)",
   "scripts": {
     "dev": "next dev",
+    "dev:webpack": "NEXT_DISABLE_TURBOPACK=1 next dev",
+    "dev:trace": "NODE_OPTIONS=\"--trace-uncaught --trace-gc --unhandled-rejections=strict\" next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "clean": "rm -rf .next node_modules && yarn install"
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
@@ -30,7 +33,7 @@
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.9.0",
-    "@types/node": "^22.0.0",
+    "@types/node": "^20.14.10",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.10.0",
