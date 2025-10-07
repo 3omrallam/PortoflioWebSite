@@ -9,7 +9,7 @@ const navItems = [
 	{ href: '/about', label: 'About' },
 	{ href: '/projects', label: 'Projects' },
 	{ href: '/experience', label: 'Experience' },
-	{ href: '/blog', label: 'Blog' },
+	// { href: '/blog', label: 'Blog' },
 	{ href: '/contact', label: 'Contact' }
 ];
 
@@ -56,7 +56,7 @@ export function Navbar() {
 				</nav>
 				<div className="flex items-center gap-3">
 					<a
-						href="/cv.pdf"
+						href="/OmatAllamResume.pdf"
 						download
 						className="hidden sm:inline-block text-xs rounded-md border border-border/60 px-3 py-1.5 bg-bg/40 backdrop-blur hover:text-primary hover:border-primary/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
 					>

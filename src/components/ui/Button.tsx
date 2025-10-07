@@ -40,34 +40,31 @@ const sizeStyles: Record<ButtonSize, string> = {
 /* We simulate a fancy animated gradient border using a wrapper (the button itself) with 1px padding and an inner content span. */
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    // Animated gradient border + subtle glass interior + glow on hover
-    'p-[1px] bg-[linear-gradient(110deg,hsl(var(--primary))_0%,hsl(var(--secondary))_38%,hsl(var(--primary))_70%)] [background-size:200%_200%] animate-[gradient-shift_8s_linear_infinite] shadow-[0_4px_18px_-6px_hsl(var(--primary)/0.55)] hover:shadow-[0_6px_30px_-8px_hsl(var(--primary)/0.65)] text-primary-foreground',
+    // Glassy tinted primary background (semi‑transparent primary color)
+    'text-primary-foreground bg-[hsl(var(--primary)/0.18)] supports-[backdrop-filter]:bg-[hsl(var(--primary)/0.20)] hover:bg-[hsl(var(--primary)/0.26)] backdrop-blur-md shadow-[0_2px_6px_-3px_hsl(var(--primary)/0.55)] hover:shadow-[0_4px_14px_-4px_hsl(var(--primary)/0.6)] ring-1 ring-inset ring-white/10 transition-colors',
   secondary:
-    'p-[1px] bg-[linear-gradient(120deg,hsl(var(--secondary)/0.9),hsl(var(--primary)/0.9))] [background-size:160%_160%] animate-[gradient-shift_10s_linear_infinite] text-primary-foreground shadow-[0_3px_14px_-4px_hsl(var(--secondary)/0.55)] hover:shadow-[0_6px_26px_-8px_hsl(var(--secondary)/0.65)]',
+    'p-[1px] bg-[linear-gradient(120deg,hsl(var(--secondary)/0.9),hsl(var(--primary)/0.9))] text-primary-foreground shadow-[0_2px_8px_-4px_hsl(var(--secondary)/0.45)]',
   outline:
-    'border border-border bg-bg/70 hover:border-primary/60 hover:bg-primary/5 backdrop-blur supports-[backdrop-filter]:bg-bg/40',
+    'border border-border bg-bg/70 hover:border-primary/50 hover:bg-primary/5 backdrop-blur supports-[backdrop-filter]:bg-bg/40',
   ghost:
     'bg-transparent hover:bg-primary/10 text-fg/80 hover:text-fg'
 };
 
 // Inner layer for gradient variants (primary/secondary) to create a glass effect
 function innerLayer(children: React.ReactNode, variant: ButtonVariant) {
-  if (variant === 'primary' || variant === 'secondary') {
-    return (
-      <span
-        className={cn(
-          'relative inline-flex h-full w-full items-center justify-center rounded-[inherit] px-[calc(theme(spacing.6)-1px)]',
-          'before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(100deg,transparent,rgba(255,255,255,0.35),transparent)] before:translate-x-[-120%] before:transition-transform before:duration-700 before:ease-out group-hover:before:translate-x-[120%]',
-          'bg-bg/80 backdrop-blur-md supports-[backdrop-filter]:bg-bg/60'
-        )}
-      >
-        <span className="relative z-10 flex items-center gap-2">{children}</span>
-        <span className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-inset ring-white/10" />
-        <span className="pointer-events-none absolute -inset-px rounded-[inherit] opacity-0 blur group-hover:opacity-60 transition duration-500 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/0.55),transparent_70%)]" />
-      </span>
-    );
-  }
-  return <>{children}</>;
+  // Only secondary keeps the framed inner glass content now.
+  if (variant !== 'secondary') return <>{children}</>;
+  return (
+    <span
+      className={cn(
+        'relative inline-flex h-full w-full items-center justify-center rounded-[inherit] px-[calc(theme(spacing.6)-1px)]',
+        'bg-bg/80 backdrop-blur-md supports-[backdrop-filter]:bg-bg/60'
+      )}
+    >
+      <span className="relative z-10 flex items-center gap-2">{children}</span>
+      <span className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-inset ring-white/10" />
+    </span>
+  );
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -118,8 +115,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       </>
     );
 
-    const isGradientVariant = variant === 'primary' || variant === 'secondary';
-    const paddingFix = isGradientVariant ? 'px-0' : '';
+  const hasInnerLayer = variant === 'secondary';
+  const paddingFix = hasInnerLayer ? 'px-0' : '';
 
     const elementProps: any = href
       ? {
@@ -136,7 +133,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             sizeStyles[size],
           variantStyles[variant],
           paddingFix,
-          'will-change-transform',
+          // removed will-change-transform to reduce unnecessary paint hints
           className
         )}
         {...elementProps}

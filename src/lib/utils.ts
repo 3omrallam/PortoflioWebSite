@@ -35,4 +35,5 @@ export type Project = {
   screenshots?: string[]; // additional preview images
   featured?: boolean;
   tags?: string[];
+  highlights?: string[]; // key bullet points / features
 };

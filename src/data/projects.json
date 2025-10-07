@@ -1,9 +1,9 @@
 [
   {
-    "slug": "design-system-platform",
-    "title": "Englease* - E-Learning Platform",
-    "description": "A composable multi-brand design system with theme tokens, accessibility primitives, and automated visual regression.",
-    "tech": ["React", "Next.js", "Storybook", "TailwindCSS"],
+    "slug": "englease-elearning-platform",
+    "title": "Englease.com – E‑Learning Dashboard Platform",
+    "description": "Multi-tenant e-learning dashboard for managing English classes, schedules, attendance and student progress with rich calendar + analytics.",
+    "tech": ["Angular 13", "TypeScript", "SCSS", "Angular Material", "FullCalendar"],
     "repo": "",
     "live": "https://englease.com/en/",
     "screenshots": [
@@ -11,14 +11,23 @@
       "/EngleaseDesigns/Register.png",
       "/EngleaseDesigns/Calendar.png"
     ],
+    "highlights": [
+      "Role: Senior Front-End Engineer (architecture & UI system)",
+      "Modular Angular 13 codebase with lazy-loaded feature modules",
+      "Scheduling & class management with real-time updates",
+      "Student progress tracking & performance dashboards",
+      "FullCalendar integration for sessions & events",
+      "Design system theming using SCSS + Angular Material overrides",
+      "Accessibility & keyboard navigable admin workflows"
+    ],
     "featured": true,
-    "tags": ["design-system", "theming", "a11y"]
+    "tags": ["e-learning", "dashboard", "calendar", "analytics"]
   },
   {
-    "slug": "analytics-dashboard",
-    "title": "Saudi Authority for Intellectual Property - Data Visualization",
-    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
-    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "slug": "saip-digital-platform",
+    "title": "SAIP.gov.sa – SaaS & Landing Experience Platform",
+    "description": "Government-scale SaaS + marketing experience for intellectual property services: modular landing pages, real-time status updates, and secure user flows.",
+    "tech": ["React", "Next.js", "TypeScript", "WebSockets"],
     "repo": "",
     "live": "https://saip.gov.sa/",
     "screenshots": [
@@ -26,14 +35,23 @@
       "/SaipWebsiteDesigns/Home.png",
       "/SaipWebsiteDesigns/About.png"
     ],
+    "highlights": [
+      "Role: Front-End Engineer delivering SaaS & marketing surfaces",
+      "Modular landing page sections with CMS-driven content blocks",
+      "Real-time filing / request status updates via WebSockets",
+      "Performance tuning (Core Web Vitals & bundle splitting)",
+      "Accessible UI components aligned with WCAG 2.1 AA",
+      "Incremental static regeneration & edge caching strategy",
+      "Analytics + event instrumentation for conversion funnels"
+    ],
     "featured": true,
-    "tags": ["data-viz", "realtime"]
+    "tags": ["government", "saas", "landing", "realtime"]
   },
   {
-    "slug": "IPR Saudi Authority for Intellectual Property - Interactive Dashboard",
-    "title": "IPR Saudi Authority for Intellectual Property - Interactive Dashboard",
-    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
-    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "slug": "saip-ipr-statistics",
+    "title": "SAIP IPR Statistics – Internal Analytics Micro‑Frontend",
+    "description": "Micro‑frontend analytics dashboard for intellectual property rights examiners providing real-time workload metrics, examination throughput, and decision pipeline insights.",
+    "tech": ["React 18", "Module Federation", "Redux Toolkit", "RTK Query", "TypeScript", "SCSS"],
     "repo": "",
     "live": "",
     "screenshots": [
@@ -41,14 +59,23 @@
       "/IPRDesigns/Home.png",
       "/IPRDesigns/EnterData.png"
     ],
+    "highlights": [
+      "Role: Front-End Engineer implementing micro‑frontend analytics module",
+      "Webpack Module Federation integration inside a larger SAIP platform shell",
+      "Real-time statistics for examiner workload & processing latency",
+      "Redux Toolkit + RTK Query for normalized caching & auto-refetch policies",
+      "Progressive data hydration with optimistic UI for status updates",
+      "SCSS modular architecture with variable-driven theming",
+      "Performance focus: memoized selectors & bundle partitioning"
+    ],
     "featured": true,
-    "tags": ["data-viz", "realtime"]
+    "tags": ["micro-frontend", "analytics", "redux", "realtime"]
   },
   {
-    "slug": "analytics-dashboard",
-    "title": "Deal360 - Real Estate Dashboard",
-    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
-    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "slug": "deal360-real-estate-platform",
+    "title": "Deal360 – Real Estate Marketplace & 360° Virtual Tours",
+    "description": "Full-featured real estate marketplace platform enabling property discovery, interactive 360° virtual tours, map-based exploration, and authenticated user management.",
+    "tech": ["React", "Redux", "Axios", "Google Maps API", "Firebase", "SCSS", "Bootstrap"],
     "repo": "",
     "live": "",
     "screenshots": [
@@ -57,14 +84,23 @@
       "/Deal360Designs/Deal360Login.png",
       "/Deal360Designs/PropertiesDetails.png"
     ],
+    "highlights": [
+      "Role: Front-End Engineer delivering core marketplace flows",
+      "Google Maps API integration with clustered markers & geo filters",
+      "360° property media viewer (panoramic/virtual tour support)",
+      "Secure auth & session management via Firebase",
+      "Redux state architecture with normalized entities & caching",
+      "Responsive SCSS + Bootstrap layout system",
+      "Optimized Axios data layer with request interception & error handling"
+    ],
     "featured": true,
-    "tags": ["data-viz", "realtime"]
+    "tags": ["real-estate", "maps", "virtual-tour", "marketplace"]
   },
   {
-    "slug": "analytics-dashboard",
-    "title": "Auction Project - NFT Marketplace",
-    "description": "Interactive dashboard with live streaming metrics and custom chart components.",
-    "tech": ["Next.js", "TypeScript", "WebSockets", "D3.js"],
+    "slug": "auctions-saas-marketplace",
+    "title": "Auctions – SaaS Real-Time Auction Marketplace",
+    "description": "Real-time auction SaaS enabling secure bidding, listing workflows, role-based dashboards, and analytics insight for administrators and sellers.",
+    "tech": ["Next.js", "React", "TypeScript", "Ant Design", "TailwindCSS", "NextAuth", "ApexCharts"],
     "repo": "",
     "live": "",
     "screenshots": [
@@ -72,8 +108,18 @@
       "/AuctionProject/Wallet1.png",
       "/AuctionProject/Profiledropdown.png"
     ],
+    "highlights": [
+      "Role: Front-End Engineer implementing real-time bidding & dashboards",
+      "WebSocket-driven live bidding updates & countdown timers",
+      "NextAuth secure authentication + role-based access (admin / seller / bidder)",
+      "ApexCharts analytics dashboards: revenue, bid velocity, engagement",
+      "Multi-step listing creation wizard with validation & draft persistence",
+      "Hybrid UI: Ant Design components with Tailwind utility refinement",
+      "Server-side rendering + incremental static regeneration for SEO",
+      "Optimized bundle via code-splitting heavy chart & auth modules"
+    ],
     "featured": true,
-    "tags": ["data-viz", "realtime"]
+    "tags": ["auctions", "realtime", "analytics", "marketplace", "auth"]
   }
   
 ]

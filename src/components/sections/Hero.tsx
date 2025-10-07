@@ -23,15 +23,14 @@ export function Hero() {
             transition={{ duration: 0.65, delay: 0.05 }}
             className="text-lg text-fg-muted max-w-xl leading-relaxed"
           >
-            👋 Hi, I’m Omar — Senior Front-End Engineer & UI Architect I’m a Senior
-            Front-End Developer and Architect passionate about building modern,
-            high-performance, and scalable web applications. I specialize in crafting
-            pixel-perfect UIs with a focus on performance, accessibility, and clean
-            architecture. Over the past 7+ years, I’ve helped companies design and develop
-            digital products that are fast, responsive, and delightful to use. I believe
-            that great front-end engineering is where creativity meets technology — and I
-            love turning complex ideas into elegant, maintainable solutions. 🚀 Let’s
-            build something exceptional together.
+            👋 Hi, I’m Omar — a Senior
+            Front-End Developer & Architect specializing in React.js, Next.js, and modern,
+            scalable web applications. I help startups, enterprises, and government
+            projects build high-performing, SEO-friendly, pixel-perfect web apps that
+            deliver results. 💡 With years of hands-on experience in SaaS, dashboards, and
+            design systems, I focus on clarity, collaboration, and clean code — turning
+            ideas into beautiful, maintainable digital experiences. 🚀 Let’s build
+            something impactful — from MVPs to large-scale platforms.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -39,8 +38,10 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="flex flex-wrap gap-4"
           >
-            <Button href="/contact" size="lg">Hire Me</Button>
-            <Button href="/cv.pdf" variant="outline" download>
+            <Button href="/contact" >
+              Hire Me
+            </Button>
+            <Button href="/OmatAllamResume.pdf" variant="outline" download>
               Download CV
             </Button>
           </motion.div>

@@ -8,6 +8,28 @@ export function ProjectCard({ project }: { project: Project }) {
   const hasLive = typeof project.live === 'string' && project.live.trim().length > 0;
   const isConfidential = project.live === '' && !hasLive;
   const [open, setOpen] = React.useState(false);
+  const cardRef = React.useRef<HTMLDivElement | null>(null);
+
+  // interactive tilt state via CSS vars (no re-renders)
+  const handlePointerMove = (e: React.MouseEvent) => {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width; // 0 -> 1
+    const y = (e.clientY - rect.top) / rect.height; // 0 -> 1
+    // convert to -1 -> 1 centered
+    const mx = (x - 0.5) * 2;
+    const my = (y - 0.5) * 2;
+    el.style.setProperty('--mx', mx.toFixed(3));
+    el.style.setProperty('--my', my.toFixed(3));
+  };
+
+  const resetPointer = () => {
+    const el = cardRef.current;
+    if (!el) return;
+    el.style.setProperty('--mx', '0');
+    el.style.setProperty('--my', '0');
+  };
 
   // Lock body scroll when modal open
   React.useEffect(() => {
@@ -20,8 +42,17 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <>
     <div
+      ref={cardRef}
+      onMouseMove={handlePointerMove}
+      onMouseLeave={resetPointer}
       className="group relative flex flex-col rounded-xl border border-border/50 overflow-hidden bg-bg/35 backdrop-blur-xl
-      transition duration-300 hover:shadow-[0_4px_30px_-10px_hsl(var(--primary)/0.4)] hover:border-primary/40"
+      transition duration-300 hover:shadow-[0_8px_36px_-12px_hsl(var(--primary)/0.55)] hover:border-primary/40 will-change-transform"
+      style={{
+        // root subtle perspective tilt for the whole card
+        transform: 'perspective(1400px) rotateX(calc(var(--my,0)*5deg)) rotateY(calc(var(--mx,0)*5deg))',
+        '--mx': '0',
+        '--my': '0'
+      } as React.CSSProperties}
     >
       {/* Animated outline / glow ring */}
       <div className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-500">
@@ -29,25 +60,34 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
   {(project.screenshots?.length ?? 0) > 0 ? (
         <div className="relative h-44 w-full overflow-hidden flex items-center justify-center bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10">
-          <div className="relative w-[340px] h-[170px] [perspective:1600px]">
+          <div
+            className="relative w-[340px] h-[170px] [perspective:1600px] transition-transform duration-500 ease-out"
+            style={{
+              transform: 'rotateX(calc(var(--my,0)*7deg)) rotateY(calc(var(--mx,0)*7deg)) translateZ(0)'
+            }}
+          >
             {project.screenshots!.slice(0,3).map((shot, i) => {
               const rotations = ['-6deg','0deg','6deg'];
               const offsets = ['-14%','0%','14%'];
+              const depth = [18, 34, 22]; // px translateZ
+              const parallax = [6, 10, 6]; // % multiplier for var based movement
               return (
                 <div
                   key={shot}
-                  className="absolute top-1/2 left-1/2 w-[210px] h-[130px] -translate-x-1/2 -translate-y-1/2 rounded-lg overflow-hidden shadow-[0_4px_18px_-6px_hsl(var(--primary)/0.4)] border border-border/60 bg-bg/50 backdrop-blur-sm transition-transform duration-500 group-hover:scale-105"
+                  className="absolute top-1/2 left-1/2 w-[210px] h-[130px] -translate-x-1/2 -translate-y-1/2 rounded-lg overflow-hidden shadow-[0_4px_18px_-6px_hsl(var(--primary)/0.4)] border border-border/60 bg-bg/50 backdrop-blur-sm transition-transform duration-500 ease-out group-hover:shadow-[0_6px_28px_-10px_hsl(var(--primary)/0.55)]"
                   style={{
-                    transform:`translate(-50%,-50%) translateX(${offsets[i]}) rotate(${rotations[i]}) translateZ(${i===1? '30px':'0'})`,
-                    zIndex: i===1?30:10+i
+                    transform: `translate(-50%,-50%) translateX(${offsets[i]}) rotate(${rotations[i]}) translateZ(${depth[i]}px) translateX(calc(var(--mx,0)*${parallax[i]}%)) translateY(calc(var(--my,0)*${parallax[i]}%))`,
+                    zIndex: i===1?30:10+i,
+                    willChange: 'transform'
                   }}
                 >
                   <Image
                     src={shot}
                     alt={`${project.title} screenshot ${i+1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover select-none pointer-events-none"
                     sizes="210px"
+                    draggable={false}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/10 to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
                 </div>
@@ -234,6 +274,19 @@ export function ProjectCard({ project }: { project: Project }) {
                     <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-bg/20 to-transparent opacity-0 group-hover/screen:opacity-100 transition-opacity" />
                   </div>
                 ))}
+              </section>
+            )}
+            {project.highlights && project.highlights.length > 0 && (
+              <section className="space-y-3 mt-2">
+                <h3 className="text-sm font-semibold tracking-wide uppercase text-fg/70">Key Highlights</h3>
+                <ul className="grid gap-2 text-sm leading-relaxed list-none pl-0">
+                  {project.highlights.map(h => (
+                    <li key={h} className="relative pl-5">
+                      <span className="absolute left-0 top-[0.55em] -translate-y-1/2 size-2 rounded-full bg-gradient-to-r from-primary via-secondary to-accent shadow-[0_0_0_3px_hsl(var(--bg))]" />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
               </section>
             )}
           </div>

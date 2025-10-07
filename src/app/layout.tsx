@@ -5,6 +5,7 @@ import { siteConfig } from '@/lib/utils';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { ToastProvider } from '@/components/ui/Toast';
 import { ScrollToTop } from '@/components/shared/ScrollToTop';
 // Background mode provider removed (fixed background mode)
 import { ClientBackground } from '@/components/layout/ClientBackground';
@@ -51,10 +52,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.variable} ${formal.variable} ${jet.variable} font-formal font-light bg-bg text-fg relative min-h-screen flex flex-col`}>        
         <ClientBackground />
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-1 flex flex-col">{children}</main>
-          <Footer />
-          <ScrollToTop />
+          <ToastProvider>
+            <Navbar />
+            <main className="flex-1 flex flex-col">{children}</main>
+            <Footer />
+            <ScrollToTop />
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>
